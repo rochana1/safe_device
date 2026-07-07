@@ -1,6 +1,11 @@
-## Unreleased
+## 1.4.1
+
+* iOS: Fix Xcode failing to resolve Swift Package Manager dependencies with `the package manifest at '/Package.swift' cannot be accessed` when building on Flutter 3.44.2/3.44.4. `DTTJailbreakDetection` is now vendored directly into the `safe_device` SPM package instead of being referenced as a remote dependency, since its upstream repository ships no `Package.swift` of its own.
+
+## 1.4.0
 
 * iOS: Add Swift Package Manager (SPM) support alongside CocoaPods. Resolves the "plugin does not support Swift Package Manager" warning under Flutter 3.44+. Addresses [#94](https://github.com/ufukhawk/safe_device/issues/94).
+* iOS: Fix Xcode 16+ semantic compiler error in `SafeDeviceJailbreakDetection.m` by replacing file-scope static array literals with class methods. Resolves [#98](https://github.com/ufukhawk/safe_device/discussions/98).
 
 ## 1.3.10
 
